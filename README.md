@@ -1,5 +1,7 @@
 # FPL-Transfer-Analysis
 
+**Project Statue** - *Development*
+
 ## Overview
 FPL-Transfer-Analysis is a tool designed to help Fantasy Premier League (FPL) managers make informed decisions on which players to transfer into their team. The project leverages past gameweek statistics and machine learning models to predict player performance. It includes a **backend** built with FastAPI for data processing and analysis, and a **frontend** built with React (using Vite) for visualizing insights.
 
