@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List, Union
 from abc import ABC, abstractmethod
-from ...config import DATA_PATH, NO_STORE_DATA, NO_CACHE_DATA
+from scraper.config import DATA_PATH, NO_STORE_DATA, NO_CACHE_DATA
 
 import soccerdata as sd
 
