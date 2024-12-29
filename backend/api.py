@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from decouple import config
+from config import *
 
 # DATABASE_URL = config("DATABASE_URL")
 # SECRET_KEY = config("SECRET_KEY")
