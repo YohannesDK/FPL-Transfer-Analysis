@@ -1,5 +1,5 @@
 import soccerdata as sd
-from .config import *
+from ...scraper.config import *
 from pathlib import Path
 # Define the data path as a global variable
 DATA_PATH = Path(DATA_PATH)

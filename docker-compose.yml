@@ -12,6 +12,12 @@ services:
       - ./backend/.env
     command: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
+  scraper:
+    build:
+      context: ./scraper
+    env_file:
+      - ./scraper/.env
+
   frontend:
     build:
       context: ./frontend
