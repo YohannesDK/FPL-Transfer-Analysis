@@ -5,11 +5,15 @@ services:
       context: ./backend
     ports:
       - "8000:8000"
+    command: ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000"]
+  
+  scraper:
+    build:
+      context: ./scraper
     env_file:
-      - ./backend/.env
+      - ./scraper/.env
     environment:
-      - DATA_PATH=/app/data  # Override the DATA_PATH variable
-    command: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
+      - DATA_PATH=/app/scraper/data  # Override the DATA_PATH variable
 
   frontend:
     build:
