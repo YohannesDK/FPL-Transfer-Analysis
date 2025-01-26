@@ -16,29 +16,36 @@ FPL-Transfer-Analysis is a tool designed to help Fantasy Premier League (FPL) ma
 ## Project Structure
 
 ```plaintext
-FPL-Transfer-Analysis/
+FPL-Transfer-Analysis
 ├── backend/                  # Backend (FastAPI)
+│   ├── src/                  # Source code for backend
+│   └── tests/                # Unit tests for backend
 │   ├── Dockerfile            # Backend Dockerfile
+│   ├── __init__.py           # Backend package initializer
 │   ├── requirements.txt      # Python dependencies
-│   ├── api.py                # Main FastAPI app
-│   ├── data_ingestion.py     # Script for fetching data
-│   ├── preprocessing.py      # Script for data preprocessing
-│   ├── model.py              # ML model implementation
-│   ├── utils.py              # Utility functions
-│   |── .env                  # Backend Environment variables
 ├── frontend/                 # Frontend (React + Vite)
-│   ├── Dockerfile            # Frontend Dockerfile
-│   ├── package.json          # Node.js dependencies
 │   ├── src/                  # React source code
 │   ├── public/               # Static assets
+│   ├── Dockerfile            # Frontend Dockerfile
+│   ├── package.json          # Node.js dependencies
 │   |── .env                  # Frontend Environment variables
-├── data/                     # Data folder (raw/processed data)
 ├── notebooks/                # Jupyter notebooks for exploration
-├── tests/                    # Unit tests for backend
-├── docker-compose.yml        # Development Docker Compose
+├── scraper/                  # Scraper for fetching data
+│   ├── src/                  # Source code for scraper
+│       ├── jobs/             # Scheduled jobs for scraping
+│       └── scrapers/         # Individual scraper implementations
+│   └── Dockerfile            # Scraper Dockerfile
+│   ├── __init__.py           # Scraper package initializer
+│   ├── config.py             # Configuration for scraper
+│   ├── requirements.txt      # Python dependencies for scraper
+└── shared/                   # Shared utilities and modules
+  └── data_processing/        # Data processing scripts and modules
 ├── docker-compose.prod.yml   # Production Docker Compose
+├── docker-compose.yml        # Development Docker Compose
 ├── README.md                 # Documentation
-└── .env                      # Shared Environment variables
+├── poetry.lock               # Poetry lock file for dependencies
+├── pyproject.toml            # Poetry project configuration
+├── requirements.txt          # Python dependencies
 ```
 ---
 

@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from scraper.src.scrapers.PremierLeagueScraper import PremierLeagueScraper
+
 
 app = FastAPI()
+prem_scraper = PremierLeagueScraper()
 
 # Add CORS middleware
 app.add_middleware(
@@ -14,5 +17,8 @@ app.add_middleware(
 
 @app.get("/api/data")
 async def get_data():
-    return {"data": [1, 2, 3, 4, 5]}
+    data = prem_scraper.scrape()
+    print(data)
+    # return scraped data in JSON format
+    return data.head().to_json(orient="records")
 

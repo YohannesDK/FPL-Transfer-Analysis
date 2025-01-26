@@ -2,14 +2,17 @@ version: "3.9"
 services:
   backend:
     build:
-      context: ./backend
+      context: .       # Set the build context to the project root
+      dockerfile: ./backend/Dockerfile
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app  # Mount code for live updates
-
+      - ./scraper:/app/scraper  # Mount scraper directory
     env_file:
       - ./backend/.env
+    environment:
+      PYTHONPATH: "/app:/app/scraper"
     command: ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
   scraper:

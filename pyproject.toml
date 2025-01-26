@@ -12,12 +12,14 @@ fastapi = "^0.115.6"
 uvicorn = "^0.34.0"
 scikit-learn = "^1.6.0"
 python-decouple = "^3.8"
+apscheduler = "^3.11.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
 notebook = "^7.3.2"
 ipykernel = "^6.29.5"
 jupyter = "^1.1.1"
+apscheduler = "^3.11.0"
 
 [build-system]
 requires = ["poetry-core"]
