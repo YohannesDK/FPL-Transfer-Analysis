@@ -20,5 +20,5 @@ async def get_data():
     data = prem_scraper.scrape()
     print(data)
     # return scraped data in JSON format
-    return data.to_json(orient="records")
+    return data.head().to_json(orient="records")
 
