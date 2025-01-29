@@ -10,7 +10,7 @@ def main():
     scheduler = BlockingScheduler()
 
     # Schedule a job to run every 5 minutes
-    scheduler.add_job(test_scraper_job, "interval", minutes=5)
+    scheduler.add_job(test_scraper_job, "interval", minutes=1)
 
     logger.info("Scheduler started. Press Ctrl+C to exit.")
     # print("Scheduler started. Press Ctrl+C to exit.")
